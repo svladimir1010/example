@@ -4,7 +4,6 @@ import { Placeholder } from "./components/Placeholder";
 import { ToDo } from "./components/ToDo";
 import { User } from "./components/User";
 import { UserList } from "./components/withPlaceholder";
-// import Service from './services'
 
 import "./styles.css";
 
@@ -20,15 +19,11 @@ function App() {
   return (
     <div className="App">
       <Placeholder url={"https://jsonplaceholder.typicode.com/users"}>
-      
-      {/* console.log(this) */}
         {({ items, loading, error, onRemove }) => {
-          console.log(this)
           if (loading) return "loading";
           if (error) return "error";
-console.log(this)
           return items.map((item, index) => (
-            <User {...item} onRemove={() => onRemove(index)} />
+            <User {...item} key={item.id} onRemove={() => onRemove(index)} />
           ));
         }}
       </Placeholder>
@@ -37,9 +32,8 @@ console.log(this)
         {({ items, loading, error, onRemove }) => {
           if (loading) return "loading";
           if (error) return "error";
-
           return items.map((item, index) => (
-            <ToDo {...item} onRemove={() => onRemove(index)} />
+            <ToDo {...item} key={item.id} onRemove={() => onRemove(index)} />
           ));
         }}
       </Placeholder>
