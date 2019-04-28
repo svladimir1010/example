@@ -16,31 +16,33 @@ import "./styles.css";
  */
 
 function App() {
-  return (
-    <div className="App">
-      <Placeholder url={"https://jsonplaceholder.typicode.com/users"}>
-        {({ items, loading, error, onRemove }) => {
-          if (loading) return "loading";
-          if (error) return "error";
-          return items.map((item, index) => (
-            <User {...item} key={item.id} onRemove={() => onRemove(index)} />
-          ));
-        }}
-      </Placeholder>
+    return (
+        <div className="App">
+            <Placeholder url={"https://jsonplaceholder.typicode.com/users"}>
+                {({ items, loading, error, onRemove }) => {
+                    console.log(loading);
+                    if (loading) return "loading";
+                    if (error) return "error";
+                    return items.map((item, index) => (
+                        <User {...item} key={item.id} onRemove={() => onRemove(index)} />
+                    ));
+                }}
+            </Placeholder>
 
-      <Placeholder url={"https://jsonplaceholder.typicode.com/todos"}>
-        {({ items, loading, error, onRemove }) => {
-          if (loading) return "loading";
-          if (error) return "error";
-          return items.map((item, index) => (
-            <ToDo {...item} key={item.id} onRemove={() => onRemove(index)} />
-          ));
-        }}
-      </Placeholder>
+            <Placeholder url={"https://jsonplaceholder.typicode.com/todos"}>
+                {({ items, loading, error, onRemove }) => {
+                    console.log(loading);
+                    if (loading) return "loading";
+                    if (error) return "error";
+                    return items.map((item, index) => (
+                        <ToDo {...item} key={item.id} onRemove={() => onRemove(index)} />
+                    ));
+                }}
+            </Placeholder>
 
-      <UserList url={"https://jsonplaceholder.typicode.com/users"} />
-    </div>
-  );
+            <UserList url={"https://jsonplaceholder.typicode.com/users"} />
+        </div>
+    );
 }
 
 const rootElement = document.getElementById("root");
