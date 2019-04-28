@@ -20,7 +20,6 @@ function App() {
         <div className="App">
             <Placeholder url={"https://jsonplaceholder.typicode.com/users"}>
                 {({ items, loading, error, onRemove }) => {
-                    console.log(loading);
                     if (loading) return "loading";
                     if (error) return "error";
                     return items.map((item, index) => (
@@ -31,7 +30,6 @@ function App() {
 
             <Placeholder url={"https://jsonplaceholder.typicode.com/todos"}>
                 {({ items, loading, error, onRemove }) => {
-                    console.log(loading);
                     if (loading) return "loading";
                     if (error) return "error";
                     return items.map((item, index) => (

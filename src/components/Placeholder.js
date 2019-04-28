@@ -27,7 +27,6 @@ export class Placeholder extends Component {
 
     render() {
         const { items, loading, error } = this.state;
-        console.log(loading);
         const onRemove = id => {
             const newItems = items.slice();
             newItems.splice(id, 1);
