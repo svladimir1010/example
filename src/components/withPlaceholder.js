@@ -40,7 +40,7 @@ const withPlaceholder = EnhancedComponent => {
             if (error) return "error";
             return (
                 <EnhancedComponent
-                    {...this.props}
+                    
                     items={data}
                     onRemove={onRemove}
                 />

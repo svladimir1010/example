@@ -23,7 +23,11 @@ function App() {
                     if (loading) return "loading";
                     if (error) return "error";
                     return items.map((item, index) => (
-                        <User {...item} key={item.id} onRemove={() => onRemove(index)} />
+                        <User
+                            {...item}
+                            key={item.id}
+                            onRemove={() => onRemove(index)}
+                        />
                     ));
                 }}
             </Placeholder>
@@ -33,7 +37,11 @@ function App() {
                     if (loading) return "loading";
                     if (error) return "error";
                     return items.map((item, index) => (
-                        <ToDo {...item} key={item.id} onRemove={() => onRemove(index)} />
+                        <ToDo
+                            {...item}
+                            key={item.id}
+                            onRemove={() => onRemove(index)}
+                        />
                     ));
                 }}
             </Placeholder>
